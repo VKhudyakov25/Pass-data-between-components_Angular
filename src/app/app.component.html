@@ -1,5 +1,10 @@
 <dx-button text="Click Me" (onClick)="toggle()" type="success"></dx-button>
-<dx-text-box #textbox label="Link" labelMode="floating"></dx-text-box>
+<dx-text-box
+  #textbox
+  label="Link"
+  labelMode="floating"
+  [value]="content"
+></dx-text-box>
 <dx-popup
   id="popup"
   contentTemplate="popup-content"
@@ -11,10 +16,7 @@
   [height]="500"
 >
   <div *dxTemplate="let data of 'popup-content'">
-    <img
-      src="https://visualstudio.microsoft.com/wp-content/uploads/2019/03/Devexpress-2.png"
-      alt="logo"
-    />
-    <p #textBoxValue>Text Button value: "{{ value }}"</p>
+    <!-- <app-content-template [(value)]="value"></app-content-template> -->
+    <app-content-template [(text)]="content"></app-content-template>
   </div>
 </dx-popup>

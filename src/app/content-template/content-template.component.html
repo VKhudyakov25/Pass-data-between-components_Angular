@@ -1,1 +1,11 @@
-<p>content-template works!</p>
+<img
+  src="https://visualstudio.microsoft.com/wp-content/uploads/2019/03/Devexpress-2.png"
+  alt="logo"
+/>
+<p #textBoxValue>Text Button value: "{{ text }}"</p>
+<dx-text-box
+  label="Link"
+  labelMode="floating"
+  (onValueChanged)="valChange($event)"
+  [value]="text"
+></dx-text-box>

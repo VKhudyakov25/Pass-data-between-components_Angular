@@ -8,19 +8,17 @@ import { DxTextBoxComponent } from 'devextreme-angular';
 })
 export class AppComponent {
   isPopupVisible: boolean;
-  value: string;
+  content: string = '';
 
   @ViewChild('textBoxValue') textBoxValue!: ElementRef;
   constructor() {
     this.isPopupVisible = false;
-    this.value = '';
   }
 
   @ViewChild(DxTextBoxComponent, { static: false }) textBox: DxTextBoxComponent;
 
   toggle(): void {
     this.isPopupVisible = !this.isPopupVisible;
-    this.value = this.textBox.value;
-    this.textBox.value = '';
+    this.content = this.textBox.value;
   }
 }
